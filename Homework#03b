@@ -1,1 +1,20 @@
+Program 2 Requirements:
+1. This program should run with one command line argument. The argument should be a URL that
+you want to analyze.
+2. If the URL is in the “.edu” domain, print “In EDU”.
+3. If the URL is not in the “.edu” domain, print “Not in EDU”
 
+
+
+x = (input('What is the URL?: '))
+y = '.edu' in x
+if (y == 1):
+    print('In EDU domain')
+else:
+    print('Not in EDU domain')
+    
+    
+   
+This program just reads the user input for the charcaters ".edu" and returns "In EDU domain" or "Not in EDU domain".
+It doesn't actually access a domain name system. It satisfies the program requirements, but you can look at it and let 
+me know what you think.
