@@ -1,1 +1,43 @@
+Program 1 Requirements:
+1. This program should run interactively meaning that you should prompt the user for the input at
+runtime.
+2. Prompt the user for a file size. The user should be able to enter a size in Megabytes or
+Gigabytes. They can distinguish this by adding a “M” or a “G” to the end of the size number.
+a. Examples
+i. User input: 25M means 25 Megabytes
+ii. User input: 25G means 25 Gigabytes
+3. Prompt the user for a network speed in Megabits/second.
+4. Calculate the estimated file transfer time in seconds based on the user input.
+a. For times longer than a minute, display the transfer time in minutes and seconds.
+b. Remember that you will need to convert the file size to do a correct calculation.
+c. Extra Credit: Allow the user to enter the number of decimal places they would like the
+transfer time rounded to and format the output accordingly.
 
+
+
+
+# My code for program 1 #
+
+
+# Prompt user for file Size #
+
+File_size = str(input('What size is the file?: '))
+print('The file size is: ', File_size)
+
+# Prompt user for network speed #
+
+Network_speed = str(input('What is your network speed?: '))
+print('Your network speed is: ', Network_speed)
+
+# Calculate estimated file transfer time #
+
+Download = File_size/Netowrk_speed
+print('Estimated download time', Download)
+
+
+
+
+This is where i'm having trouble. I'm trying to just divide the file size by the network speed, but the user needs to be
+able to enter an 'M' or 'G' after the file size to indicate megabytes or gigabytes. Same thing for the network speed with m/s.
+so the program fails because of the alphabetical characters I think, but I don't know how to make the program only divide the
+numeric value
