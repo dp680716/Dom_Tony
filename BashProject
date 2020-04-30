@@ -1,0 +1,25 @@
+# Author: Dominic Prestifilippo
+# Last Modified April 29, 2020
+
+# This script is intended to find specific information about the processes running on your computer:
+# Amount of CPU time, name, ID and start time for the process and user-owned processes and then generate 
+# a report of the data
+
+# Sort the running processes by TIME (length process has been running) or the 7th key: k7
+
+ps -Afc | sort -rk 7
+
+# Write the sorted output to a text file, which I have chosen to name processlogs.txt, to be read from
+
+ps -Afc | sort -rk 7 > processlogs.txt
+
+# Find the corresponding data from the file including: all user-owned processes, and the name, PID, running 
+# time and start time of the longest running process
+
+awk '{if(NR==4) print "\nLongest Running Process: \nPID:", $2, "\nSTIME:", $5,"\nRUN TIME: " $7, 
+"\nPROCESS NAME: " $8}{if(/501/) print"\nUser-Owned: " $8}' processlogs.txt
+
+# Write that data to a new file named process_log.txt
+
+awk '{if(NR==4) print "\nLongest Running Process: \nPID:", $2, "\nSTIME:", $5,"\nRUN TIME: " $7, 
+"\nPROCESS NAME: " $8}{if(/501/) print"\nUser-Owned: " $8}' processlogs.txt > process_log.txt
